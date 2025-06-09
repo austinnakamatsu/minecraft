@@ -34,7 +34,7 @@ resource "aws_instance" "minecraft_server" {
       private_key = "${file("~/mykeyfile")}"
     }
     inline = [
-      "${file("/Users/austinnakamatsu/Desktop/CS312/final/minecraft/scripts/dinstall.sh")}"
+      "${file("../scripts/dinstall.sh")}"
     ]
   }
 }

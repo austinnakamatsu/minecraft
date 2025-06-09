@@ -39,7 +39,7 @@ sudo docker run -d --restart=always -p 25565:25565 -e EULA=TRUE itzg/minecraft-s
 Create a file called `terraform/main.tf` and copy paste the following below:
 
 >[!NOTE]  
-> Replace "~/mykeyfile" with your keypair name and path. Replace "your_absolute_path" with the absolute path to your script file.
+> Replace "~/mykeyfile" with your keypair name and path.
 
 ``` tf
 terraform {
@@ -78,7 +78,7 @@ resource "aws_instance" "minecraft_server" {
       private_key = "${file("{~/mykeyfile}")}"
     }
     inline = [
-      "${file("{your_absolute_path}/install.sh")}"
+      "${file("../scripts/install.sh")}"
     ]
   }
 }
